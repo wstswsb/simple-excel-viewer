@@ -1,13 +1,6 @@
-import typing as t
-
 import pandas as pd
 
 from simple_excel_viewer.exceptions import InvalidFileFormat
-
-
-class DataframeLoader(t.Protocol):
-    def load(self, path: str) -> pd.DataFrame:
-        ...
 
 
 class ExcelDataframeLoader:

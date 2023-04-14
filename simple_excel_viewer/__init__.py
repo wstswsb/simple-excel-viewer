@@ -1,7 +1,5 @@
 from .app import App as App
-from .dataframe_loader import DataframeLoader as DataframeLoader
 from .dataframe_loader import ExcelDataframeLoader as ExcelDataframeLoader
-from .dataframe_presenter import DataframePresenter as DataframePresenter
 from .dataframe_presenter import (
     PandasDefaultDataframePresenter as PandasDefaultDataframePresenter,
 )

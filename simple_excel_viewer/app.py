@@ -1,9 +1,19 @@
+import typing as t
+
 import pandas as pd
 
-from simple_excel_viewer.dataframe_loader import DataframeLoader
-from simple_excel_viewer.dataframe_presenter import DataframePresenter
 from simple_excel_viewer.dataframe_service import DataframeService
 from simple_excel_viewer.exceptions import InvalidFileFormat
+
+
+class DataframeLoader(t.Protocol):
+    def load(self, path: str) -> pd.DataFrame:
+        ...
+
+
+class DataframePresenter(t.Protocol):
+    def present(self, dataframe: pd.DataFrame) -> str:
+        ...
 
 
 class App:
