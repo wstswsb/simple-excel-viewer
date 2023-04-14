@@ -1,7 +1,12 @@
 import argparse
 import os
 
-from main import main
+from simple_excel_viewer import (
+    App,
+    DataframeService,
+    ExcelDataframeLoader,
+    PandasDefaultDataframePresenter,
+)
 
 
 class KwargsAppendAction(argparse.Action):
@@ -44,4 +49,9 @@ parser.add_argument(
 args = parser.parse_args()
 
 if __name__ == "__main__":
-    main(path=args.filename, filters=args.filters)
+    app = App(
+        ExcelDataframeLoader(),
+        PandasDefaultDataframePresenter(),
+        DataframeService(),
+    )
+    app.run(args.filename, args.filters)

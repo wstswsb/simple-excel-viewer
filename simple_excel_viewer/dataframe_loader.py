@@ -1,7 +1,8 @@
 import typing as t
 
 import pandas as pd
-from exceptions import InvalidFileFormat
+
+from simple_excel_viewer.exceptions import InvalidFileFormat
 
 
 class DataframeLoader(t.Protocol):
